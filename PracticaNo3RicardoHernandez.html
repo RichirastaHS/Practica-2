@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculadora</title>
+    <style>
+    body { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+        display: flex; justify-content: center;}
+  
+    #op {background-color: rgb(148, 71, 219); color: antiquewhite; font-weight: bolder;
+    border-radius: 5px; border-color: rgb(103, 8, 115); border-width: 2.5px;}
+
+    #n1, #n2 {background-color: rgb(212, 227, 240); margin: .5%; border-radius: 4px; 
+    border-color: rgb(87, 20, 151); border-width: 2px;}  
+
+    #boton {background-color: rgb(148, 71, 219); color: antiquewhite; font-weight: bolder; margin: .5%;
+    border-radius: 4px; border-color: rgb(103, 8, 115); border-width: 2.5px;}
+
+    #r {background-color: rgb(148, 71, 219); color: antiquewhite; font-family: sans-serif;
+    border-radius:4px;}
+    </style>
+    
+</head>
+
+<body>
+    <input type="text" id="n1" placeholder="primer numero">
+     
+    <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">x</option>
+        <option value="/">/</option>
+
+    <input type="text" id="n2" placeholder="segundo numero">
+    </select>
+        
+    <button id="boton">=</button>
+    
+    <output id="r"></output> 
+    <script>
+        
+        document.querySelector('#boton').addEventListener('click', () =>{
+            const x1 = parseInt(document.querySelector('#n1').value);
+            const x2 = parseInt(document.querySelector('#n2').value);
+            const op2 = document.querySelector('#op').value;
+            let r;
+            if(op2 == '+'){
+                r = x1 + x2;
+            }else if( op2 == '-'){
+                r = x1 - x2;
+            }else if(op2 == '*'){
+                r = x1 * x2;
+            }else if(op2 == '/'){
+                r = x1 / x2;
+            }
+            document.querySelector('#r').innerHTML = r;
+            });
+    </script>
+
+</body>
+</html>
